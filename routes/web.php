@@ -11,6 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [
+	'as' => 'home',
+	'uses' => 'PostController@index'
+]);
+
+Route::get('login', [
+	'as' => 'login',
+	'uses' => 'PostController@getLogin'
+]);
+
+
+Route::get('register', [
+	'as' => 'register',
+	'uses' => 'PostController@getRegister'
+]);
+
